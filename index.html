@@ -1,11 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Para Pilar 💖</title>
+<meta charset="UTF-8">
+<title>Feliz Cumple Pilar ✨</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: repeating-linear-gradient(
+    90deg,
+    #dff5e3 0px,
+    #dff5e3 40px,
+    #d9f0ff 40px,
+    #d9f0ff 80px
+  );
+  overflow-x: hidden;
+}
+
+/* EMOJIS FLOTANDO */
+.emoji {
+  position: fixed;
+  font-size: 22px;
+  animation: flotar 6s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes flotar {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+h1 {
+  color: #ff6fae;
+}
+
+.subtitulo {
+  color: #6bbbe8;
+  margin-top: -10px;
+}
+
+.vibrar {
+  animation: vibrar 0.15s infinite alternate;
+}
+
+@keyframes vibrar {
+  from { transform: translateX(-2px); }
+  to { transform: translateX(2px); }
+}
+
+.celeste {
+  color: #6bbbe8;
+}
+
+button {
+  padding: 15px 35px;
+  border: none;
+  border-radius: 30px;
+  background: #ffd6e8;
+  cursor: pointer;
+}
+
+#mensajeBtn {
+  display: none;
+  margin-top: 20px;
+}
+
+.firma {
+  margin-top: 25px;
+  color: #888;
+}
+
+/* 🎁 REGALO */
+.caja-regalo {
+  position: relative;
+  width: 160px;
+  margin: 30px auto;
+  cursor: pointer;
+}
+
+.tapa-regalo {
+  width: 160px;
+  height: 40px;
+  background: #d62828;
+  border-radius: 15px;
+  position: absolute;
+  top: -40px;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.base-regalo {
+  width: 160px;
+  height: 110px;
+  background: #e63946;
+  border-radius: 20px;
+}
+
+.cinta {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 18px;
+  height: 110px;
+  background: #ffd60a;
+  transform: translateX(-50%);
+}
+
+.caja-regalo.abierta .tapa-regalo {
+  transform: translateY(-140px) rotate(-25deg);
+  opacity: 0;
+}
+
+/* 🐕 PERROS */
+#perros {
+  display: none;
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+#finalTexto {
+  display: none;
+  margin-top: 20px;
+  font-weight: bold;
+}
+</style>
 </head>
+
 <body>
-  <h1>FELIZ CUMPLEAÑOS PILARRRR ✨😭😭</h1>
-  <p>Si ves esto, YA FUNCIONA 🎉</p>
+
+<!-- EMOJIS -->
+<script>
+const emojis = ["✨","🎈","🎊","💫","🐕"];
+for (let i = 0; i < 20; i++) {
+  let e = document.createElement("div");
+  e.className = "emoji";
+  e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left = Math.random()*100 + "vw";
+  e.style.animationDuration = (4 + Math.random()*4) + "s";
+  document.body.appendChild(e);
+}
+</script>
+
+<div class="section">
+  <div class="card">
+    <h1 id="titulo" class="vibrar">FELIZ CUMPLEAÑOS PILARRRR ✨😭😭</h1>
+    <p class="subtitulo">un pequeño detalle</p>
+    <p>desliza ↓</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <p class="celeste">✨ jakjsd Hola Pilii bueno tal vez no puedo darte algo presencial pero aun asi quise darte un detalle por esta fecha tan importante para ti enserio me alegra mucho que estes cumpliendo años hoy 12 de enero y espero que la estes pasando super bien ✨</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <button onclick="mostrarMensaje()">TOCA AQUÍ 💞</button>
+    <div id="mensajeBtn">
+      <p class="celeste">JAKSDJKAS aii bueno pues solo recordarte quee oie te quiero mucho y eres muy especial para mi Feliz cumpleañosss 💞✨✨</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+    <p class="celeste">Bueno jaksdj me diverti haciendo esto enserio y ahora si dejando un poco el chiste solo desearte lo mejor, que siempre cumplas todo lo que te propongas sabes que te apoyo en todo y eres unica y especial asi como tambien eres tan importante para mi como para mucha gentee Pilarr hoy 12 de enero te deseo un Feliz cumpleaños Ahora y siempre Te quiero muchote. ✨</p>
+
+    <div class="firma">
+      De S.C.O (Salomon Castillo Ojeda)<br>
+      Paraaa P.P.P (Pilar Panecillo Pili) JAJKASDJA
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="card">
+
+    <p class="celeste">Un último regalo 🎁</p>
+
+    <div class="caja-regalo" id="caja" onclick="abrirRegalo()">
+      <div class="tapa-regalo"></div>
+      <div class="cinta"></div>
+      <div class="base-regalo"></div>
+    </div>
+
+    <div id="perros">🐕 🐕 🐕 🐕 🐕 🐕 🐕 🐕</div>
+    <div id="finalTexto" class="celeste">Feliz cumpleaños Pilar 💚✨</div>
+
+  </div>
+</div>
+
+<script>
+function mostrarMensaje() {
+  document.getElementById("mensajeBtn").style.display = "block";
+}
+
+function abrirRegalo() {
+  document.getElementById("caja").classList.add("abierta");
+  document.getElementById("perros").style.display = "block";
+  setTimeout(() => {
+    document.getElementById("finalTexto").style.display = "block";
+  }, 800);
+}
+
+// quitar vibración a los 3s
+setTimeout(() => {
+  document.getElementById("titulo").classList.remove("vibrar");
+}, 3000);
+</script>
+
 </body>
 </html>
